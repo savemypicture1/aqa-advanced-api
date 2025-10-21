@@ -7,28 +7,30 @@ describe("Updating Posts API", () => {
     baseURL: API_BASE_URL,
     validateStatus: () => true,
   });
+  const postId = 1;
 
-  test("PUT /posts/1 updates a post and returns updated object", async () => {
+  test(`PUT /posts/${postId} updates a post and returns updated object`, async () => {
     const requestData = {
-      id: 1,
+      id: postId,
       title: "foo",
       body: "bar",
       userId: 1,
     };
-    const response = await apiClient.put("/posts/1", requestData);
+    const response = await apiClient.put(`/posts/${postId}`, requestData);
     expect(response.status).toBe(200);
     expect(response.data).toEqual(requestData);
   });
 
-  test("PATCH /posts/1 partially updates a post and returns updated object", async () => {
+  test(`PATCH /posts/${postId} partially updates a post and returns updated object`, async () => {
+    const updatedTitle = "updated title";
     const requestData = {
-      title: "updated title",
+      title: updatedTitle,
     };
-    const response = await apiClient.patch("/posts/1", requestData);
+    const response = await apiClient.patch(`/posts/${postId}`, requestData);
     expect(response.status).toBe(200);
     expect(response.data).toEqual({
-      id: expect.any(Number),
-      title: "updated title",
+      id: postId,
+      title: updatedTitle,
       body: expect.any(String),
       userId: expect.any(Number),
     });
