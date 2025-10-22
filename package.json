@@ -1,0 +1,31 @@
+{
+  "name": "aqa-advanced-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savemypicture1/aqa-advanced-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savemypicture1/aqa-advanced-api/issues"
+  },
+  "homepage": "https://github.com/savemypicture1/aqa-advanced-api#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0"
+  },
+  "dependencies": {
+    "axios": "^1.12.2"
+  }
+}
